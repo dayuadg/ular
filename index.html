@@ -53,22 +53,9 @@
         </nav>
     </header>
 
-    <canvas id="viewport">
-    <h2 style="text-align:center">Use a better browser !</h2>
-</canvas>
-
-<script>
-    window.addEventListener('resize', resizeCanvas);
-
-    function resizeCanvas() {
-        var canvas = document.getElementById('viewport');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    // Call the function initially to set the canvas size
-    resizeCanvas();
-</script>
+    <canvas id="viewport" width="1200px" height="600px" >
+            <h2 style="text-align:center">Use a better browser !</h2>
+        </canvas>
 
 </body>
 </html>
