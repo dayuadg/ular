@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi kami melalui WhatsApp untuk pertanyaan, saran, atau bantuan lebih lanjut.">
+    <meta name="keywords" content="hubungi kami, contact us, WhatsApp, form kontak">
+    <meta name="author" content="gamesz.pages.dev">
+    <title>Hubungi Kami - Burun Marrah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1da851;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hubungi Kami</h1>
+    <form id="contactForm">
+        <label for="name">Nama Anda:</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+        
+        <label for="phone">Nomor WhatsApp Anda:</label>
+        <input type="text" id="phone" name="phone" placeholder="Masukkan nomor WhatsApp Anda" required>
+        
+        <label for="message">Pesan Anda:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+        
+        <button type="button" onclick="sendMessage()">Kirim Pesan</button>
+    </form>
+
+    <script>
+        function sendMessage() {
+            // Ganti dengan nomor WhatsApp tujuan Anda
+            const phoneNumber = "628123456789"; // Format: kode negara diikuti nomor (contoh: 62 untuk Indonesia)
+            
+            // Ambil data dari form
+            const name = document.getElementById("name").value;
+            const userPhone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            // Validasi input
+            if (!name || !userPhone || !message) {
+                alert("Harap lengkapi semua kolom sebelum mengirim pesan.");
+                return;
+            }
+
+            // Format pesan WhatsApp
+            const whatsappMessage = `Halo, nama saya ${name}. Nomor WhatsApp saya: ${userPhone}. Pesan saya: ${message}`;
+
+            // Buka WhatsApp di tab baru
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
